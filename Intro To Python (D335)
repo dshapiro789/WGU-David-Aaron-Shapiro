@@ -74,7 +74,9 @@ print("Distance: {:.2f} miles".format(total_distance_traveled))
 #2:
 
 
-Create a solution that accepts an integer input representing any number of ounces. Output the converted total number of tons, pounds, and remaining ounces based on the input ounces value. There are 16 ounces in a pound and 2,000 pounds in a ton.
+Create a solution that accepts an integer input representing any number of ounces. 
+Output the converted total number of tons, pounds, and remaining ounces based on the input ounces value. 
+There are 16 ounces in a pound and 2,000 pounds in a ton.
 
 The solution output should be in the format
 
@@ -171,7 +173,9 @@ print(f"Element {index_value}: {data_type}")
 #4:
 
 
-Create a solution that accepts any three integer inputs representing the base (b1, b2) and height (h) measurements of a trapezoid in meters. Output the exact area of the trapezoid in square meters as a float value. The exact area of a trapezoid can be calculated by finding the average of the two base measurements, then multiplying by the height measurement.
+Create a solution that accepts any three integer inputs representing the base (b1, b2) and height (h) measurements of a trapezoid in meters. 
+Output the exact area of the trapezoid in square meters as a float value. 
+The exact area of a trapezoid can be calculated by finding the average of the two base measurements, then multiplying by the height measurement.
 
 Trapezoid Area Formula:
 A = [(b1 + b2) / 2] * h
@@ -494,7 +498,8 @@ except:
 #10:
 
 
-Create a solution that accepts an integer input identifying how many shares of stock are to be purchased from the Old Town Stock Exchange, followed by an equivalent number of string inputs representing the stock selections. The following dictionary stock lists available stock selections as the key with the cost per selection as the value.
+Create a solution that accepts an integer input identifying how many shares of stock are to be purchased from the Old Town Stock Exchange, followed by an equivalent number of string inputs representing the stock selections. 
+The following dictionary stock lists available stock selections as the key with the cost per selection as the value.
 
 stocks = {'TSLA': 912.86 , 'BBBY': 24.84, 'AAPL': 174.26, 'SOFI': 6.92, 'KIRK': 8.72, 'AURA': 22.12, 'AMZN': 141.28, 'EMBK': 12.29, 'LVLU': 2.33}
 
@@ -544,7 +549,8 @@ print("Total price: ${:.2f}".format(total_cost))
 #11:
 
 
-Create a solution that accepts a string input representing a grocery store item and an integer input identifying the number of items purchased on a recent visit. The following dictionary purchase lists available items as the key with the cost per item as the value.
+Create a solution that accepts a string input representing a grocery store item and an integer input identifying the number of items purchased on a recent visit. 
+The following dictionary purchase lists available items as the key with the cost per item as the value.
 
 purchase = {"bananas": 1.85, "steak": 19.99, "cookies": 4.52, "celery": 2.81, "milk": 4.34}
 
@@ -610,7 +616,10 @@ if num_items >= 21:
 #12:
 
 
-Create a solution that accepts an input identifying the name of a text file, for example, "WordTextFile1.txt". Each text file contains three rows with one word per row. Using the open() function and write() and read() methods, interact with the input text file to write a new sentence string composed of the three existing words to the end of the file contents on a new line. Output the new file contents.
+Create a solution that accepts an input identifying the name of a text file, for example, "WordTextFile1.txt". 
+Each text file contains three rows with one word per row. 
+Using the open() function and write() and read() methods, interact with the input text file to write a new sentence string composed of the three existing words to the end of the file contents on a new line. 
+Output the new file contents.
 
 The solution output should be in the format:
 
@@ -725,7 +734,9 @@ for row in data:
 #14:
 
 
-Create a solution that accepts an integer input. Import the built-in module math and use its factorial() method to calculate the factorial of the integer input. Output the value of the factorial, as well as a Boolean value identifying whether the factorial output is greater than 100.
+Create a solution that accepts an integer input. 
+Import the built-in module math and use its factorial() method to calculate the factorial of the integer input. 
+Output the value of the factorial, as well as a Boolean value identifying whether the factorial output is greater than 100.
 
 The solution output should be in the format
 
@@ -780,7 +791,9 @@ else:
 #15:
 
 
-Create a solution that accepts an integer input representing the age of a pig. Import the existing module pigAge and use its pre-built pigAge_converter() function to calculate the human equivalent age of a pig. A year in a pig's life is equivalent to five years in a human's life. Output the human-equivalent age of the pig.
+Create a solution that accepts an integer input representing the age of a pig. 
+Import the existing module pigAge and use its pre-built pigAge_converter() function to calculate the human equivalent age of a pig. 
+A year in a pig's life is equivalent to five years in a human's life. Output the human-equivalent age of the pig.
 
 The solution output should be in the format
 
