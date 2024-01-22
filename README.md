@@ -1,6 +1,6 @@
 # WGU-David-Aaron-Shapiro-
 
-D286: Java Foundations
+D286: Java Fundamentals
 
 Date class was taken: (December 1st, 2023 - December 23rd, 2023)
 
