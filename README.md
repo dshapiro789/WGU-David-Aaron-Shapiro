@@ -1,9 +1,11 @@
 # WGU-David-Aaron-Shapiro-
 
-D 335: Introduction to Programming in Python 
+D286: Java Foundations
 
-Date class was taken: (March 1st, 2023 - May 6th, 2023)
+Date class was taken: (December 1st, 2023 - December 23rd, 2023)
 
-Posted herein is a copy of my coding questions and answers given on the D335 Python Pre-Assessment test for a 15 out of 15 Pass!
+The following coursework represents my hands-on coding experience not only learning how to program in Java, but also applying the language to solve a variety of unique problems.
 
-NOTE: The actual proctored exam was very similar to the Pre-Assessment in so far as testing my knowledge of how to solve similar problems from scratch.
+Posted herein is a copy of my coding questions and answers given on the Java Pre-Assessment test for a 14 out of 14 Pass!
+
+The actual proctored exam was very similar to the Pre-Assessment in so far as testing my knowledge of how to solve similar problems.
