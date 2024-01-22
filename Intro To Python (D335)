@@ -2,14 +2,15 @@ ___________
 ___________
 ___________
 
-D335: Introduction to Programming in Python 
+D286: Java Fundamentals
 
-Date class was taken: (March 1st, 2023 - May 6th, 2023)
+Date class was taken: (December 1st, 2023 - December 23rd, 2023)
 
-The following coursework represents my hands-on coding experience not only learning how to program in Python, 
-but also applying the language to solve a wide variety of problems.
+The following coursework represents my hands-on coding experience not only learning how to program in Java, but also applying the language to solve a variety of unique problems.
 
-Posted below is a copy of my coding questions and answers given on the Python Pre-Assessment for a 15 out of 15 Pass!
+Posted herein is a copy of my coding questions and answers given on the Java Pre-Assessment test for a 14 out of 14 Pass!
+
+The actual proctored exam was very similar to the Pre-Assessment in so far as testing my knowledge of how to solve similar problems.
 
 ___________
 ___________
@@ -20,48 +21,29 @@ ___________
 #1:
 
 
-Create a solution that accepts three integer inputs representing the number of times an employee travels to a job site. 
-Output the total distance traveled to two decimal places given the following miles per employee commute to the job site. 
+20.01 Practice Lab 1 (Introduction to Java)
 
-Employee A: 15.62 miles
-Employee B: 41.85 miles
-Employee C: 32.67 miles
-The solution output should be in the format
+Write a program that outputs the pattern shown below, ending with a newline. Each line of the pattern contains 5 characters including whitespace.
+The output is:
 
-Distance: total_miles_traveled
-Sample Input/Output:
-
-If the input is
-
-1
-2
-3
-
-then the expected output is
-
-Distance: 197.33 miles
+H   H
+H   H
+HHHHH
+H   H
+H   H
 
 __________________________________________
 
-times_traveledA = int(input())
-times_traveledB = int(input())
-times_traveledC = int(input())
-
-EmployeeA = 15.62 #miles
-EmployeeB = 41.85 #miles
-EmployeeC = 32.67 #miles
-
-distance_traveledA = EmployeeA * times_traveledA
-distance_traveledB = EmployeeB * times_traveledB
-distance_traveledC = EmployeeC * times_traveledC
-
-total_distance_traveled = distance_traveledA + distance_traveledB + distance_traveledC
-
-print("Distance: {:.2f} miles".format(total_distance_traveled))
-
-
-
-
+public class LabProgram {
+   public static void main(String[] args) {
+      System.out.println("H   H");
+      System.out.println("H   H");
+      System.out.println("HHHHH");
+      System.out.println("H   H");
+      System.out.println("H   H");
+      
+   }
+}
 
 
 
@@ -74,48 +56,44 @@ print("Distance: {:.2f} miles".format(total_distance_traveled))
 #2:
 
 
-Create a solution that accepts an integer input representing any number of ounces. 
-Output the converted total number of tons, pounds, and remaining ounces based on the input ounces value. 
-There are 16 ounces in a pound and 2,000 pounds in a ton.
+20.02 Practice Lab 2 (Multiplication)
 
-The solution output should be in the format
 
-Tons: value_1
-Pounds: value_2
-Ounces: value_3
-Sample Input/Output:
+For this lab you will use unit testing to check a null setting using assertions. Use the commented template code provided to do the following:
 
-If the input is
+Write a program that collects two integer inputs and assigns them to the variables starting_num and multiplier. Multiply starting_num by multiplier and output the result. Repeat this process two more times, each time multiplying the previous result by multiplier. The three product outputs should be separated by a whitespace character, ending with a newline.
 
-32035
-then the expected output is
+If the input is:
+2 5
 
-Tons: 1
-Pounds: 2
-Ounces: 3
+the output when starting_num = 2 is:
+10 50 250
 
 __________________________________________
 
-ounces_per_pound = 16
-pounds_per_ton = 2000
-num_ounces = int(input())
+import java.util.Scanner;
 
-tons = num_ounces // (ounces_per_pound * pounds_per_ton)
-remaining_ounces = num_ounces % (ounces_per_pound * pounds_per_ton)
-
-pounds = remaining_ounces // ounces_per_pound
-remaining_ounces = remaining_ounces % ounces_per_pound
-
-print("Tons: {}".format(tons))
-print("Pounds: {}".format(pounds))
-print("Ounces: {}".format(remaining_ounces))
-
-
-
-
-
-
-
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in); 
+      /* Type your code here. */
+      int starting_num = scnr.nextInt();
+      int multiplier = scnr.nextInt();
+      int result = starting_num;
+      
+      for (int i = 0; i < 3; i++) {
+         result *= multiplier;
+         System.out.print(result);
+         
+         if (i < 2) {
+            System.out.print(" ");
+         }
+      }
+      
+      System.out.println();
+      
+   }
+}
 
 
 
@@ -128,39 +106,46 @@ print("Ounces: {}".format(remaining_ounces))
 #3:
 
 
-Create a solution that accepts an integer input representing the index value for any any of the five elements in the following list:
+20.3 Practice Lab 3
 
-various_data_types = [516, 112.49, True, "meow", ("Western", "Governors", "University"), {"apple": 1, "pear": 5}]
+Write a program that calculates the number of full tables for a wedding event, based on the number of expected guests. Each full table will seat 10 wedding guests.
 
-Using the built-in function type() and getting its name by using the .name attribute, output data type (e.g., int”, “float”, “bool”, “str”) based on the input index value of the list element.
+Collect one integer input and assign it to the variable guests. Using integer division, calculate the total number of tables that will be filled. The variable tableSize has been declared and initialized and the variables guests and tablesFilled have been declared in the template code.
 
-The solution output should be in the format
+Output the number of tables filled, ending with a newline. Ensure your program output matches the example formatting below and works for a variety of input values.
 
-Element index_value: data_type
-Sample Input/Output:
+If the input is:
 
-If the input is
+340
 
-4
+the output is:
 
-then the expected output is
+Tables filled: 34
 
-Element 4: tuple
+Alternatively, if the input is:
+
+349
+
+the output is:
+
+Tables filled: 34
 
 __________________________________________
 
-index_value = int(input())
+import java.util.Scanner;
 
-name = various_data_types[index_value]
-data_type = type(name).__name__
-
-print(f"Element {index_value}: {data_type}")
-
-
-
-
-
-
+public class LabProgram {
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+		int tableSize=10, guests, tablesFilled;
+      /* Type your code here. */
+      guests = scnr.nextInt();
+      
+      tablesFilled = guests / tableSize;
+      
+      System.out.println("Tables filled: " + tablesFilled);
+   }
+}
 
 
 
@@ -173,41 +158,36 @@ print(f"Element {index_value}: {data_type}")
 #4:
 
 
-Create a solution that accepts any three integer inputs representing the base (b1, b2) and height (h) measurements of a trapezoid in meters. 
-Output the exact area of the trapezoid in square meters as a float value. 
-The exact area of a trapezoid can be calculated by finding the average of the two base measurements, then multiplying by the height measurement.
+Write a program that takes a full name, age, and salary as inputs on separate lines. 
+Output a formatted message containing the inputs, ending with a newline. 
+Ensure your program output matches the example formatting below and works for a variety of input values.
 
-Trapezoid Area Formula:
-A = [(b1 + b2) / 2] * h
+If the input is:
 
-The solution output should be in the format
+Pat Ford
+35
+60,000
 
-Trapezoid area: area_value square meters
-Sample Input/Output:
+the output is:
 
-If the input is
-
-3
-4
-5
-then the expected output is
-
-Trapezoid area: 17.5 square meters
+Pat Ford is 35 and makes $60,000.
 
 __________________________________________
 
-b1 = int(input())
-b2 = int(input())
-h = int(input())
+import java.util.Scanner;
 
-area_value = ((b1 + b2) / 2) * h
-
-print("Trapezoid area: {:.1f} square meters".format(area_value))
-
-
-
-
-
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);        
+      /* Type your code here. */
+      String fullName = scnr.nextLine();
+      int age = scnr.nextInt();
+      scnr.nextLine();
+      String salary = scnr.nextLine();
+      
+      System.out.printf("%s is %d and makes $%s.\n", fullName, age, salary);
+   }
+}
 
 
 
@@ -219,52 +199,72 @@ print("Trapezoid area: {:.1f} square meters".format(area_value))
 
 #5:
 
+20.5 Practice Lab 5
 
-Create a solution that accepts five integer inputs. Output the sum of the five inputs three times, converting the inputs to the requested data type prior to finding the sum.
+A number is divisible by 3 if the sum of its digits is divisible by 3. For example, 153 is divisible by 3 because 1 + 5 + 3 = 9 and 9 is divisible by 3.
 
-First output: sum of five inputs maintained as integer values
-Second output: sum of five inputs converted to float values
-Third output: sum of five inputs converted to string values (concatenate)
-The solution output should be in the format
+Write a program that collects three integer inputs representing the place values of a three-digit number. Determines whether the sum of the digits is divisible by 3. If any integer entered is a negative value, output Invalid input!
 
-Integer: integer_sum_value
-Float: float_sum_value
-String: string_sum_value
-Sample Input/Output:
+Output a formatted message identifying if the three-digit number is divisible by 3, ending with a newline. Ensure your program output matches the example formatting below and works for a variety of input values.
 
-If the input is
+If the input is:
 
 1
+5
 3
-6
-2
-7
 
-then the expected output is
+the output is:
 
-Integer: 19
-Float: 19.0
-String: 13627
+153 is divisible by 3!
+
+Alternatively, if the input is:
+
+1
+0
+4
+
+the output is:
+
+104 is not divisible by 3!
+
+Alternatively, if the input is:
+
+1
+-5
+3
+
+the output is:
+
+Invalid input!
 
 __________________________________________
 
-num1 = int(input())
-num2 = int(input())
-num3 = int(input())
-num4 = int(input())
-num5 = int(input())
+import java.util.Scanner;
 
-integer_sum = num1 + num2 + num3 + num4 + num5
-float_sum = float(num1) + float(num2) + float(num3) + float(num4) + float(num5)
-string_sum = str(num1) + str(num2) + str(num3) + str(num4) + str(num5)
-
-print("Integer: {}".format(integer_sum))
-print("Float: {}".format(float_sum))
-print("String: {}".format(string_sum))
-
-
-
-
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);         
+      /* Type your code here. */
+      int num1 = scnr.nextInt();
+      int num2 = scnr.nextInt();
+      int num3 = scnr.nextInt();
+      
+      if (num1 < 0 || num2 < 0 || num3 < 0) {
+         System.out.println("Invalid input!");
+      }   
+      
+      else {
+         int sum = num1 + num2 + num3;
+         if (sum % 3 == 0) {
+            System.out.printf("%d%d%d is divisible by 3!\n", num1, num2, num3);
+         }      
+         
+         else {
+            System.out.printf("%d%d%d is not divisible by 3!\n", num1, num2, num3);
+         }      
+      }
+   }
+}
 
 
 
@@ -276,34 +276,57 @@ print("String: {}".format(string_sum))
 
 #6:
 
+20.6 Practice Lab 6
 
-Create a solution that accepts an integer input representing a 9-digit unformatted student identification number. Output the identification number as a string with no spaces.
+Write a program that collects a full name as one string input.
 
-The solution output should be in the format
+Format and output the name as shown below:
 
-111-22-3333
-Sample Input/Output:
+lastInitial., firstName middleInitial.
 
-If the input is
+If no middle name was provided, format and output the name as shown below:
 
-154175430
-then the expected output is
+lastInitial., firstName
 
-154-17-5430
+If the input is:
+
+Pat Silly Doe
+
+the output is:
+
+D., Pat S.
+
+Alternatively, if the input is:
+
+Julia Clark
+
+the output is:
+
+C., Julia
 
 __________________________________________
 
-student_id = int(input())
-student_id_string = str(student_id)
+import java.util.Scanner; 
 
-first3 = student_id_string[0:3]
-second2 = student_id_string[3:5]
-last4 = student_id_string[5:]
-
-print(f"{first3}-{second2}-{last4}")
-
-
-
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);       
+      /* Type your code here. */
+      String fullName = scnr.nextLine();
+      String[] parts = fullName.split(" ");
+      String firstName = parts[0];
+      String lastName = parts[parts.length - 1];
+      String finalName = lastName.substring(0, 1) + "., " + firstName;
+      
+      if (parts.length > 2) {
+         String middle = " " + parts[1].substring(0, 1);
+         finalName += middle + ".";
+      }
+      
+      System.out.println(finalName);
+      
+   }
+}
 
 
 
@@ -315,39 +338,57 @@ print(f"{first3}-{second2}-{last4}")
 
 #7:
 
+20.7 Practice Lab 7
 
-Create a solution that accepts an integer input to compare against the following list:
+Write a program that collects any number of non-negative integer inputs and calculates the sum of the values. 
+A negative integer should end the input collection and is not part of the sum.
 
-predef_list = [4, -27, 15, 33, -10]
+Output the smallest non-negative value and the sum of the non-negative input values, ending with a newline. 
+Ensure your program output matches the example formatting below and works for a variety of input values.
 
-Output a Boolean value indicating whether the input value is greater than the maximum value from predef_list
+If the input is:
 
-The solution output should be in the format
-
-Greater Than Max? Boolean_value
-Sample Input/Output:
-
-If the input is
-
+15
 20
-then the expected output is
+0
+3
+-1
 
-Greater Than Max? False
+the output is:
+
+Smallest: 0
+Sum: 38
 
 __________________________________________
 
-predef_list = [4, -27, 15, 33, -10]
-boolean_value = False
-max_value = max(predef_list)
-num = int(input())
+import java.util.Scanner; 
 
-if num > max_value:
-    boolean_value = True
-    print("Greater Than Max? {}".format(boolean_value))
-else:
-    print("Greater Than Max? {}".format(boolean_value))
-
-
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);      
+      /* Type your code here. */
+      int smallest = Integer.MAX_VALUE;
+      int sum = 0;
+      
+      while (true) {
+         int num = scnr.nextInt();
+         
+         if (num < 0) {
+            break;
+         }
+         
+         sum += num;
+         
+         if (num < smallest) {
+            smallest = num;
+         }
+      }
+      
+      System.out.println("Smallest: " + smallest);
+      System.out.println("Sum: " + sum);
+         
+   }
+}
 
 
 
@@ -359,66 +400,55 @@ else:
 
 #8:
 
+20.8 Practice Lab 8
 
-Create a solution that accepts an integer input representing water temperature in degrees Fahrenheit. Output a description of the water state based on the following scale:
+Write a program that creates an array to hold three values of type double. The program should collect the three double values as input and store them in the array. Then calculate the average value of the array.
 
-If the temperature is below 33° F, the water is “Frozen”.
-If the water is between 33° F and 80° F (including 33), the water is “Cold”.
-If the water is between 80° F and 115° F (including 80), the water is "Warm".
-If the water is between 115° F and 211° (including 115) F, the water is “Hot".
-If the water is greater than or equal to 212° F, the water is “Boiling”.
+Output the array values and calculated average value, ending with a newline. Ensure your program output matches the example formatting below and works for a variety of input values.
 
-Additionally, output a safety comment only during the following circumstances:
+If the input is:
 
-If the water is exactly 212° F, the safety comment is "Caution: Hot!"
-If the water temperature is less than 33° F, the safety comment is "Watch out for ice!"
+10.0
+10.5
+11.0
 
-The solution output should be in the format:
+the output is:
 
-water_state
-optional_safety_comment
-
-Sample Input/Output:
-
-If the input is
-
-118
-
-then the expected output is
-
-Hot
-
-Alternatively, if the input is
-
-32
-
-then the expected output is
-
-Frozen
-Watch out for ice!
+Array items: 10.0, 10.5, 11.0
+Average: 10.5
 
 __________________________________________
 
-temperature = int(input())
+import java.util.Scanner;
 
-if temperature >= 212:
-    print("Boiling")
-if temperature == 212: 
-    print("Caution: Hot!")
-if temperature in range(115, 212): #115-211
-    print("Hot")
-if temperature in range(80, 115): #80-114
-    print("Warm")
-if temperature in range(33, 80): #33-79
-    print("Cold")
-if temperature < 33:
-    print("Frozen")
-    print("Watch out for ice!")
-
-
-
-
-
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      /* Type your code here. */
+      double[] values = new double[3];
+      
+      double sum = 0.0;
+      
+      for (int i = 0; i < 3; i++) {
+         values[i] = scnr.nextDouble();
+         sum += values[i];
+      }         
+         
+      double avg = sum / 3.0;
+      System.out.print("Array items: ");
+         
+      for (int i = 0; i < 3; i++) {
+         System.out.print(values[i]);
+         
+         if (i < 2) {
+            System.out.print(", ");
+         }
+      }   
+      
+      System.out.println();
+      System.out.println("Average: " + avg);   
+   }
+}
 
 
 
@@ -430,62 +460,48 @@ if temperature < 33:
 
 #9:
 
+20.9 Practice Lab 9
 
-Create a solution that accepts one integer input representing the index value for any of the string elements in the following list:
+Define a method named "showResults" with one parameter. The parameter should reference a random object rand. The showResults() method should generate a random integer of 0 or 1 using the random object reference rand. If the random number generated is equal to 1, return "true". If the random number generated is equal to 0, return "false".
 
-frameworks = ["Django", "Flask", "CherryPy", "Bottle", "Web2Py", "TurboGears"]
+In the main() method template, the rand variable has already been assigned a random object with a seed value of 2. Write a program that collects one integer value as input, assumed to be greater than 0. Use a loop to call the showResults() method a number of times equal to the integer input. e.g., If 3 is entered as input, then showResults() will be called 3 times, each time returning "true" or "false".
 
-Output the string element of the index value entered. The solution should be placed in a try block and implement an exception of "Error" if an incompatible integer input is provided.
+Output the returned Boolean values on separate lines, ending with a newline.
 
-The solution output should be in the format:
+If the input is:
 
-frameworks_element
+3
 
-Sample Input/Output:
+the output with a random object seed value of 2 is:
 
-If the integer input is
-
-2
-
-then the expected output is
-
-CherryPy
-
-Alternatively, if the integer input is
-
-7
-
-then the expected output is
-
-Error
+true
+false
+true
 
 __________________________________________
 
 
-frameworks = ["Django", "Flask", "CherryPy", "Bottle", "Web2Py", "TurboGears"]
-index_value = int(input())
+import java.util.Scanner;
+import java.util.Random;
 
-try:
-    if index_value == 0:
-        print(frameworks[0])
-    if index_value == 1:
-        print(frameworks[1])
-    if index_value == 2:
-        print(frameworks[2])
-    if index_value == 3:
-        print(frameworks[3])
-    if index_value == 4:
-        print(frameworks[4])
-    if index_value == 5:
-        print(frameworks[5])
-    if index_value > 5:
-        print(frameworks[index_value])
-except:
-    print("Error")
-
-
-
-
+public class LabProgram {   
+   /* Define your method here */
+   public static boolean showResults(Random rand) {
+      int randomNum = rand.nextInt(2);
+      return randomNum == 1;
+   }
+   
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      Random rand = new Random(2); // Seed used in develop mode
+      /* Type your code here. */
+      int num = scnr.nextInt();
+      for (int i = 0; i < num; i++) {
+         boolean result = showResults(rand);
+         System.out.println(result);
+      }
+   }
+}
 
 
 
@@ -497,46 +513,67 @@ except:
 
 #10:
 
+20.10 Practice Lab 10
 
-Create a solution that accepts an integer input identifying how many shares of stock are to be purchased from the Old Town Stock Exchange, followed by an equivalent number of string inputs representing the stock selections. 
-The following dictionary stock lists available stock selections as the key with the cost per selection as the value.
+An existing class Customer() has been provided in Customer.java. Write a program in main() of CustomerAge.java to accept one string input and one integer input for a customer's name and age fields, respectively. Use the existing customer1 and customer2 reference variables provided in the template to set the name and age of both customer objects using the setName() and setAge() methods. Determine which customer is older using its getAge() method.
 
-stocks = {'TSLA': 912.86 , 'BBBY': 24.84, 'AAPL': 174.26, 'SOFI': 6.92, 'KIRK': 8.72, 'AURA': 22.12, 'AMZN': 141.28, 'EMBK': 12.29, 'LVLU': 2.33}
+Output the older customer's information using its printInfo() method, ending with a newline. Ensure your program output matches the example formatting below and works for a variety of input values.
 
-Output the total cost of the purchased shares of stock to two decimal places.
+If the input is:
 
-The solution output should be in the format:
+Jane
+25
+John
+29
 
-Total price: $cost_of_stocks
-Sample Input/Output:
+the output is:
 
-If the input is
-
-3
-SOFI
-AMZN
-LVLU
-
-then the expected output is:
-
-Total price: $150.53
+Customer that is older:
+Name: John
+Age: 29
 
 __________________________________________
 
-stocks = {'TSLA': 912.86, 'BBBY': 24.84, 'AAPL': 174.26, 'SOFI': 6.92, 'KIRK': 8.72, 'AURA': 22.12, 'AMZN': 141.28, 'EMBK': 12.29, 'LVLU': 2.33}
+import java.util.Scanner;
 
-num_shares = int(input())
-total_cost = 0
+public class CustomerAge {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      
+      Customer customer1 = new Customer();
+      Customer customer2 = new Customer();
+      
+      // TODO: Declare name and age variables (string, and int)
+      // TODO: Read name and age input for customer 1
+      // TODO: Set customer 1 name and age fields using mutator methods (setName() and setAge())      
+      // TODO: Read name and age input for customer 2
+      // TODO: Set customer 2 name and age fields using mutator methods (setName() and setAge())
+      
+      String name1 = scnr.nextLine();
+      int age1 = scnr.nextInt();
+      scnr.nextLine();
+      String name2 = scnr.nextLine();
+      int age2 = scnr.nextInt();
+      
+      customer1.setName(name1);
+      customer1.setAge(age1);
+      customer2.setName(name2);
+      customer2.setAge(age2);
+      
+      System.out.println("Customer that is older:");
+      
+      // TODO: Determine older customer (use getAge())
+      // and output older customer's info (use printInfo())
 
-for i in range(num_shares):
-    stock_selection = input()
-    if stock_selection in stocks:
-        total_cost += stocks[stock_selection]
-
-print("Total price: ${:.2f}".format(total_cost))
-
-
-
+      if (customer1.getAge() > customer2.getAge()) {
+         customer1.printInfo();
+      }
+      
+      else {
+         customer2.printInfo();
+      }
+   }
+}
 
 
 
@@ -548,62 +585,52 @@ print("Total price: ${:.2f}".format(total_cost))
 
 #11:
 
+20.11 Practice Lab 11
 
-Create a solution that accepts a string input representing a grocery store item and an integer input identifying the number of items purchased on a recent visit. 
-The following dictionary purchase lists available items as the key with the cost per item as the value.
+Debt ratio is a ratio of total debt to total assets, calculated using the formula:
+Total Debt / Total Assets
 
-purchase = {"bananas": 1.85, "steak": 19.99, "cookies": 4.52, "celery": 2.81, "milk": 4.34}
+The DebtMeasure.java file contains existing code that collects input for totalDebt and totalAssets, then passes the inputs into the Debt object's calculateDR() method. The code then returns the debtRatio using the Debt object's getDR() method.
 
-Additionally,
+Write code in the Debt class of Debt.java that has the following field and methods:
 
-If fewer than ten items are purchased, the price is the full cost per item.
-If between ten and twenty items (inclusive) are purchased, the purchase gets a 5% discount.
-If twenty-one or more items are purchased, the purchase gets a 10% discount.
-Output the chosen item and total cost of the purchase to two decimal places.
+debtRatio: public field of type double
 
-The solution output should be in the format
+calculateDR: private method with two parameter variables of type double for totalDebt and totalAssets
 
-item_purchased $total_purchase_cost
-Sample Input/Output:
+The calculateDR method should calculate the debt ratio and assign the results to the debtRatio field.
+Use the method signature public void calculateDR(double totalDebt, double totalAssets).
+getDR: private accessor method that returns the debtRatio field value
 
-If the input is
+Ensure your program output matches the example formatting below and works for a variety of input values.
 
-bananas
-12
-then the expected output is
+If the input is:
 
-bananas $21.09
-Alternatively, if the input is
+250000
+300000
 
-cookies
-144
-then the expected output is
+the output when 250000 is the total debt and 300000 is the total assets is:
 
-cookies $585.79
+The Company's total debt is in the amount of $250,000.00, and total assets are in the amount of $300,000.00, which gives a debt ratio of 0.83.
 
 __________________________________________
 
-purchase = {"bananas": 1.85, "steak": 19.99, "cookies": 4.52, "celery": 2.81, "milk": 4.34}
+import java.util.Scanner;
 
-store_item = input()
-num_items = int(input())
-total_cost = purchase[store_item] * num_items
-
-if num_items < 10:
-    print(store_item, "${:.2f}".format(total_cost))
+public class DebtMeasure {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      
+      Debt debt1 = new Debt();
+            
+      double totalDebt = scnr.nextDouble();
+      double totalAssets = scnr.nextDouble();      
+            
+      debt1.calculateDR(totalDebt, totalAssets);      
     
-if num_items in range(10, 21):
-    discount = total_cost * 0.05
-    total_cost = total_cost - discount
-    print(store_item, "${:.2f}".format(total_cost))
-    
-if num_items >= 21:
-    discount = total_cost * 0.10
-    total_cost = total_cost - discount
-    print(store_item, "${:.2f}".format(total_cost))
-
-
-
+      System.out.printf("The Company's total debt is in the amount of $%,.2f, and total assets are in the amount of $%,.2f, which gives a debt ratio of %.2f.\n", totalDebt, totalAssets, debt1.getDR());      
+   }
+}
 
 
 
@@ -615,53 +642,142 @@ if num_items >= 21:
 
 #12:
 
+20.12 Practice Lab 12
 
-Create a solution that accepts an input identifying the name of a text file, for example, "WordTextFile1.txt". 
-Each text file contains three rows with one word per row. 
-Using the open() function and write() and read() methods, interact with the input text file to write a new sentence string composed of the three existing words to the end of the file contents on a new line. 
-Output the new file contents.
+Write code in the Pet.java file that has the following fields, constructors, and methods:
 
-The solution output should be in the format:
+Fields
 
-word1
-word2
-word3 
-sentence
+name: string field for the name of the pet
+type: string field for the type of pet
+age: integer field for the age of the pet
 
-Sample Input/Output:
+Constructors
 
-If the input is
+Pet: no-argument constructor
+The Pet constructor should assign the value "unknown" to the name field, the value "unknown" to the type field, and the value 0 to the age field.
+Pet: overloaded constructor with two string parameter variables for the name and type, and one integer parameter variable for the age
+The overloaded Pet constructor should assign the parameter variable values to the name, type, and age fields, accordingly.
+Methods
 
-WordTextFile1.txt
+setName: mutator method that sets the name field
+setType: mutator method that sets the type field
+setAge: mutator method that sets the age field
+getName: accessor method that returns the name field value
+getType: accessor method that returns the type field value
+getAge: accessor method that returns the age field value
 
-then the expected output is
+If the input is:
 
-cat
-chases
-dog
-cat chases dog
+Max
+Bulldog
+3
+Leo
+Boston-Terrier
+6
 
-__________________________________________
+the output is:
 
-def words_in_file(file):
-    with open(file, "r") as f:
-        words = [word.rstrip() for word in f.readlines()]
-    
-    sentence = " ".join(words)
-    
-    with open(file, "a") as f:
-        f.write("\n" + sentence)
-        
-    with open(file, "r") as f:
-        print(f.read())
+Name: unknown
+Type: unknown
+Age: 0
 
-file = input()
-words_in_file(file)
+Name: Max
+Type: Bulldog
+Age: 3
 
+Name: Leo
+Type: Boston-Terrier
+Age: 6
 
 
+__________________________________________(Pet.java file):
+
+public class Pet {
+    // TODO: Declare private fields 
+   // TODO: Define no-arg constructor 
+   // TODO: Define overloaded constructor
+   // TODO: Define getter (accessor) methods and setter (mutator) methods
+   private String name;
+   private String type;
+   private int age;
 
 
+   public Pet() {
+	   this.name = "unknown";
+	   this.type = "unknown";
+	   this.age = 0;
+   }
+
+   public Pet(String name, String type, int age) {
+	   this.name = name;
+	   this.type = type;
+	   this.age = age;
+   }
+
+
+   public void setName(String name) {
+	   this.name = name;
+   }
+
+   public void setType(String type) {
+	   this.type = type;
+   }
+
+   public void setAge(int age) {
+	   this.age = age;
+   }
+
+   public String getName() {
+	   return name;
+   }
+
+   public String getType() {
+	   return type;
+   }
+
+   public int getAge() {
+	   return age;
+   }
+}
+
+__________________________________________(PetInfo.java file):
+
+
+import java.util.Scanner;
+
+public class PetInfo {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+
+      String name, type;
+      int age;            
+
+      Pet pet1 = new Pet();      
+   
+      name = scnr.next();
+      type = scnr.next();      
+      age = scnr.nextInt();
+      Pet pet2 = new Pet(name, type, age);     
+      
+      name = scnr.next();
+      type = scnr.next();      
+      age = scnr.nextInt();
+      Pet pet3 = new Pet(name, type, age);        
+      
+      System.out.println("Name: " + pet1.getName());
+      System.out.println("Type: " + pet1.getType());
+      System.out.println("Age: " +  pet1.getAge() + "\n");
+      
+      System.out.println("Name: " + pet2.getName());
+      System.out.println("Type: " + pet2.getType());
+      System.out.println("Age: " +  pet2.getAge()  + "\n");
+      
+      System.out.println("Name: " + pet3.getName());
+      System.out.println("Type: " + pet3.getType());
+      System.out.println("Age: " +  pet3.getAge());    
+   }
+}
 
 
 
@@ -673,55 +789,125 @@ words_in_file(file)
 
 #13:
 
+20.13 Practice Lab 13
 
-Create a solution that accepts an input identifying the name of a CSV file, for example, "input1.csv". 
-Each file contains two rows of comma-separated values. 
-Import the built-in module csv and use its open() function and reader() method to create a dictionary of key:value pairs for 
-each row of comma-separated values in the specified file. 
-Output the file contents as two dictionaries.
+The MallardDuck and RubberDuck derived classes extend the Duck base class. 
+In the MallardDuck and RubberDuck derived classes, define an overridden method named getBehavior that returns the string "squeaks" and "flies", respectively.
 
-The solution output should be in the format:
+Write code in the derived class of RubberDuck.java that has the following method:
 
-{'key': 'value', 'key': 'value', 'key': 'value'}
-{'key': 'value', 'key': 'value', 'key': 'value'}
+getBehavior: an overridden method that returns the string "squeaks"
 
-Sample Input/Output:
+Write code in the derived class of MallardDuck.java that has the following method:
 
-If the input is
+getBehavior: an overridden method that returns the string "flies"
 
-input1.csv
+If the input is:
 
-then the expected output is
+Mallard Austin
+Rubber Squeaker
 
-{'a': '100', 'b': '200', 'c': '300'}
-{'bananas': '1.85', 'steak': '19.99', 'cookies': '4.52'}
+the output when "Mallard" is the duck type, "Austin" is the duck name, "Rubber" is the duck type, and "Squeaker" is the duck name is:
 
-Alternatively, if the input is
+Duck Information:
+Austin the Mallard duck flies!
+Squeaker the Rubber duck squeaks!
 
-input2.csv
+__________________________________________(DuckInfo.java file):
 
-then the expected output is
+import java.util.Scanner;
 
-{'d': '400', 'e': '500', 'f': '600'}
-{'celery': '2.81', 'milk': '4.34', 'bread': '5.63'}
+public class DuckInfo {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);   
+      
+      // Variables for Scanner object input
+      String type, name;
+      
+      // Input Mallard Duck type and name
+      type = scnr.next();
+      name = scnr.next();
+      
+      
+      System.out.println("Duck Information:"); 
+      
+      // Create MallardDuck object
+      MallardDuck md = new MallardDuck();
+      
+      // Call MallardDuck setters and pass type and name variables as arguments
+      md.setType(type);
+      md.setName(name);
+      
+      //Call MallardDuck getters and display output e.g. tab(name getter) the (type getter) duck (behavior getter)! 
+      System.out.println(md.getName() + " the " + md.getType() + " duck " + md.getBehavior() + "!");
+      
+      // Input RubberDuck type and name
+      type = scnr.next();
+      name = scnr.next();
+      
+      // Create RubberDuck object
+      RubberDuck rd = new RubberDuck();
+      
+      // Call RubberDuck setters
+      rd.setType(type);
+      rd.setName(name);
+      
+      //Call RubberDuck getters and display output e.g. tab(name getter) the (type getter) duck (behavior getter)! 
+      System.out.println(rd.getName() + " the " + rd.getType() + " duck " + rd.getBehavior() + "!");
 
-__________________________________________
-
-import csv
-input1 = input()
-
-with open(input1, "r") as f:
-    data = [row for row in csv.reader(f)]
-
-for row in data:
-    even = [row[i].strip() for i in range(0, len(row), 2)]
-    odd = [row[i].strip() for i in range(1, len(row), 2)]
-    pair = dict(zip(even, odd))
-    print(pair)
+    }
+}
 
 
+__________________________________________(MallardDuck.java file):
 
+public class MallardDuck extends Duck{
 
+    //TODO: Define getBehavior() overridden method and return String "flies"
+   @Override
+   public String getBehavior() {
+      return "flies";
+   }
+}
+
+__________________________________________(RubberDuck.java file):
+
+public class RubberDuck extends Duck {
+   
+   //TODO: Define getBehavior() overridden method and return String "squeaks"
+   
+   @Override
+   public String getBehavior() {
+      return "squeaks";
+   }
+}
+
+__________________________________________(Duck.java file):
+
+public class Duck {
+
+    private String name, behavior, type;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getBehavior() {
+        return behavior;
+    }    
+}
 
 
 
@@ -733,88 +919,174 @@ for row in data:
 
 #14:
 
+20.14 Practice Lab 14
 
-Create a solution that accepts an integer input. 
-Import the built-in module math and use its factorial() method to calculate the factorial of the integer input. 
-Output the value of the factorial, as well as a Boolean value identifying whether the factorial output is greater than 100.
+Write code in the Customer class of Customer.java to do the following:
 
-The solution output should be in the format
+Create a Grocery ArrayList.
 
-factorial_value
-Boolean_value
-Sample Input/Output:
+Define a method named getGroceryList that returns the Grocery ArrayList.
 
-If the input is
+Use the method signature public ArrayList<Grocery> getGroceryList()
 
-10
-then the expected output is
+Define a method named addGrocery with a Grocery parameter variable.
 
-3628800
-True
-Alternatively, if the input is
+The addGrocery method should add a Grocery object to the Grocery ArrayList via the parameter.
 
-3
-then the expected output is
+Use the method signature public void addGrocery(Grocery grocery)
 
-6
-False
+If the input is:
 
-__________________________________________
+John
+Eggs
+5.99
+12
+y
+Oatmeal
+8.99
+1
+n
 
-import math
-num = int(input())
-boolean_value = False
+the output when "John" is the name of the customer, "Eggs" are a grocery item, 5.99 is the price, 12 is the quantity, 
+"y" is a value indicating "yes" to enter more items, "Oatmeal" is another grocery item, 8.99 is the price, 
+1 is the quantity, and "n" is a value indicating "no" to stop entering more items is:
 
-factorial_value = math.factorial(num)
+John has the following items:
 
-if factorial_value > 100:
-    boolean_value = True
-    print(factorial_value)
-    print(boolean_value)
-else:
-    print(factorial_value)
-    print(boolean_value)
+Item: Eggs
+Price: 5.99
+Quantity: 12
+
+Item: Oatmeal
+Price: 8.99
+Quantity: 1
+
+Total: 14.98
+
+__________________________________________(CustomerInfo.java file):
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class CustomerInfo {
+ 
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      
+      String name, item;
+      double price, total = 0;
+      int quantity;
+      
+      Grocery  grocery = null;
+      Customer customer1 = new Customer();
+      name = scnr.next();
+      
+      String sentinel = "y";
+      
+      do{   
+         
+         item = scnr.next();
+         price = scnr.nextDouble();
+         quantity = scnr.nextInt();
+         
+         grocery = new Grocery(item, price, quantity);          
+         customer1.addGrocery(grocery);
+         
+         sentinel = scnr.next();         
+         
+      }while(sentinel.equals("y"));     
+      
+      System.out.println(name + " has the following items:\n");
+      
+      for(Grocery g : customer1.getGroceryList()){
+         System.out.println("Item: " + g.getItem());
+         System.out.println("Price: " + g.getPrice());
+         System.out.println("Quantity: " + g.getQuantity() + "\n");   
+         total += g.getPrice();
+      }
+      
+      System.out.println("Total: " + total);
+   }
+}
+
+__________________________________________(Customer.java file):
+
+
+import java.util.ArrayList;
+
+public class Customer {
+   private int id;
+   private String name;
+   
+   //TODO: Create a Grocery ArrayList
+   private ArrayList<Grocery> groceryList = new ArrayList<>();
+   
+   //TODO: Define getGroceryList() method that returns Grocery ArrayList  
+   public ArrayList<Grocery> getGroceryList() {
+      return groceryList;
+   }
+    
+   //TODO: Define addGrocery(Grocery grocery) that adds a Grocery object to Grocery ArrayList via the grocery parameter
+   public void addGrocery(Grocery grocery) {
+      groceryList.add(grocery);
+   }
+   
+   public int getId() {
+      return id;
+   }
+
+   public void setId(int id) {
+      this.id = id;
+   }
+
+   public String getName() {
+      return name;
+   }
+
+   public void setName(String name) {
+      this.name = name;
+   }
+}
+
+__________________________________________(Grocery.java file):
+
+
+public class Grocery {
+
+   private String item;
+   private double price;
+   private int quantity;
+   
+   public Grocery(String item, double price, int quantity) {
+        this.item = item;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+     public String getItem() {
+        return item;
+    }
+
+    public void setItem(String item) {
+        this.item = item;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-#15:
-
-
-Create a solution that accepts an integer input representing the age of a pig. 
-Import the existing module pigAge and use its pre-built pigAge_converter() function to calculate the human equivalent age of a pig. 
-A year in a pig's life is equivalent to five years in a human's life. Output the human-equivalent age of the pig.
-
-The solution output should be in the format
-
-input_pig_age is converted_pig_age in human years
-Sample Input/Output:
-
-If the input is
-
-8
-then the expected output is
-
-8 is 40 in human years
-
-__________________________________________
-
-import pigAge
-
-def pigAge_converter(pigs_age):
-    return pigs_age * 5
-
-pigs_age = int(input())
-converted_pigs_age = pigAge_converter(pigs_age)
-
-print(f"{pigs_age} is {converted_pigs_age} in human years")
