@@ -8,4 +8,4 @@ The following coursework represents my hands-on coding experience not only learn
 
 Posted herein is a copy of my coding questions and answers given on the Java Pre-Assessment test for a 14 out of 14 Pass!
 
-The actual proctored exam was very similar to the Pre-Assessment in so far as testing my knowledge of how to solve similar problems.
+The actual proctored exam was very similar to the Pre-Assessment in so far as testing my knowledge of how to solve similar problems from scratch.
